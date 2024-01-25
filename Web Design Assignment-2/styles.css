@@ -1,0 +1,264 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin-left: 20px; /* Adjust the margin to move the content to the right */
+    padding-top: 60px;
+}
+
+/* Add the following styles at the beginning of your CSS */
+
+body {
+    background-color: #f0f0f0; 
+    background-image: url('images/Background effect.jpg'); 
+    background-repeat: repeat; 
+    background-position: center center; 
+    background-attachment: fixed; 
+}
+
+
+body::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.15); 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* Add the following styles for section names */
+.section-title {
+    color: rgb(200, 0, 255);; 
+}
+
+
+.header-tab {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    margin-left: -30px;
+    width: calc(100% - 20px); /* Adjust width to account for margin-left */
+    top: 0;
+    z-index: 1000; 
+}
+
+.left-items,
+.right-items {
+    display: flex;
+}
+
+.left-items a,
+.right-items a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+/* Media queries for responsive header */
+@media screen and (max-width: 768px) {
+    .header-tab {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .left-items,
+    .right-items {
+        margin-bottom: 10px;
+    }
+
+    .left-items a,
+    .right-items a {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* Add the following styles for the button */
+.get-in-touch-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:black; 
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.get-in-touch-btn::after {
+    content: '→'; 
+    margin-left: 5px;
+}
+
+/* Hover effect */
+.get-in-touch-btn:hover {
+    background-color: rgb(51, 92, 255);; 
+}
+
+
+/* Add the following styles for circular image */
+.circular-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.circular-image img {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    border: 2px solid #333; 
+}
+
+.image-text {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-text h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.image-text p {
+    color: #666;
+}
+
+/* Add the following styles for centering the section */
+.center {
+    text-align: center;
+}
+
+#works,#certifications,
+#expertise{
+    margin: 0 auto;
+    max-width: 800px; /* Adjust the max-width as needed */
+}
+
+.title {
+    margin-left: 15px; /* Adjust the margin as needed */
+}
+
+
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center; /* Adjust the margin as needed */
+    transition: transform 0.3s ease-in-out;
+}
+
+.project img {
+    width: 250px; /* Adjust the image width as needed */
+    height: 250px;
+    margin-right: 20px; /* Adjust the margin as needed */
+    text-align:center;
+}
+
+.project img:hover {
+    transform: scale(1.1); /* Scale the image on hover */
+}
+
+.project-image-left {
+    float: left;
+}
+
+.project-image-right {
+    float: right;
+}
+
+/* Clear the float after each project to avoid layout issues */
+.project::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.gallery {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box {
+    width: 150px;
+    margin: 0 50px; /* Adjust the margin to add space */
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+}
+
+.box img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.box:hover {
+    transform: scale(1.3);
+    z-index: 2;
+}
+
+.product-table th, .product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f2f2f2;
+}
+
+.product-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around; /* Adjust to control the space between icons */
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.icon img {
+    width: 30px; /* Adjust icon size as needed */
+    margin-right: 10px; /* Adjust the margin to add space between icon and name */
+}
+
+/* Hover effect */
+.icon:hover a {
+    color: rgb(51, 92, 255); /* Green color on hover, adjust as needed */
+}
+
+
+
+
+
+
