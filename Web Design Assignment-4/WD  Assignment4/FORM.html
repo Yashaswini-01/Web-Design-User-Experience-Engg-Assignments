@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Feedback</title>
+    <style>
+        label {
+            float: left;
+            width: 150px;
+        }
+
+        #container {
+            width: 1100px;
+            margin: auto;
+            background-color: beige;
+        }
+
+        main {
+            padding: 50px;
+        }
+
+        .error-message {
+            color: rgb(255, 0, 0);
+        }
+        table,
+    th,
+    td {
+      border: 2px solid rgba(161, 25, 25, 0.436);
+      border-collapse: collapse;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+<div id="container">
+
+    <main>
+        <h2>Feedback</h2>
+        <h3>Love something? Hate something? Let us know!</h3>
+        Note: Fields marked with an asterisk(*) are mandatory
+        <br><br>
+        <form id="feedbackForm" method="post" onsubmit="return formSubmit(event)" novalidate>
+            <label>Title*:</label>
+            <input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
+            <input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
+            <input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+            <br><br>
+           
+            <label for="firstName">First Name*:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" required />
+            <span class="error-message" id="firstNameError"></span>
+            <br><br>
+
+            
+            <label for="lastName">Last Name*:</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" required />
+            <span class="error-message" id="lastNameError"></span>
+            <br><br>
+
+            
+            <label for="emailId">Email Id*:</label>
+            <input type="email" name="emailId" id="emailId" placeholder="yourname@domain.com" required />
+            <span class="error-message" id="emailError"></span>
+            <br><br>
+
+          
+            <label for="phoneNumber">Phone Number*:</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required />
+            <span class="error-message" id="phoneNumberError"></span>
+            <br><br>
+
+            
+            <label for="street Address1">Street Address 1*:</label>
+            <input type="text" name="Street Address1" id="Street Address1" placeholder="Street Address1 " required />
+            <span class="error-message" id="StreetAddress1Error"></span>
+            <br><br>
+
+           
+            <label for="street Address2">Street Address 2:</label>
+            <input type="text" name="Street Address 2" id="Street Address2" placeholder="Street Address 2 " required />
+            <br><br>
+
+       
+            <label for="City">City*:</label>
+            <input type="text" name="City" id="City" placeholder="City" required />
+            <span class="error-message" id="CityError"></span>
+            <br><br>
+
+            
+            <label for="zipcode">ZipCode*:</label>
+            <input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" required />
+            <span class="error-message" id="zipcodeError"></span>
+            <br><br>
+
+            <label for="source">How did you hear*:</label>
+            <input type='checkbox' name="source" value="facebook" /> Facebook
+            <input type='checkbox' name="source" value="google" /> Google
+            <input type='checkbox' name="source" value="yelp" /> Yelp
+            <br><br>
+
+
+            <label for="drinks">Drinks*:</label>
+            <select name="drinks" id="drinks" onchange="dropDown()" required>
+
+          <option disabled selected value>Select a drink</option>
+          <option value="Espresso">Espresso</option>
+          <option value="Double Espresso">Double Espresso</option>
+          <option value="Americano">Americano</option>
+          <option value="Cappuccino">Cappuccino</option>
+          <option value="Latte">Latte</option>
+          </select>
+
+          <br /><br />
+          <div id="dropdown1" style="display: none">
+          <input type="checkbox" id="drink1" name="drink" value="A" onchange="ondropDown(this)" />
+          <label for="drink1"> Espresso-Large <br>($1 Extra)</label><br />
+          </div>
+ 
+          <div id="dropdown2" style="display: none">
+          <input type="checkbox" id="drink2" name="drink" value="B" onchange="ondropDown(this)" />
+          <label for="drink2"> Double Espresso-Large <br>($1 Extra)</label><br />
+          </div>
+
+          <div id="dropdown3" style="display: none">
+          <input type="checkbox" id="drink3" name="drink" value="C" onchange="ondropDown(this)" />
+          <label for="drink3"> Americano-Large <br>($1 Extra)</label><br />
+          </div>
+
+          <div id="dropdown4" style="display: none">
+          <input type="checkbox" id="drink4" name="drink" value="D" onchange="ondropDown(this)" />
+          <label for="drink4"> Cappuccino-Large <br>($1 Extra)</label><br />
+          </div>
+
+          <div id="dropdown5" style="display: none">
+          <input type="checkbox" id="drink5" name="drink" value="E" onchange="ondropDown(this)" />
+          <label for="drink5"> Latte-Large <br>($1 Extra)</label><br />
+          </div>
+
+
+          <div id="additionalInfo" style="display: none">
+          <br /><br />
+          <label for="adInfo">Additional customisations*:</label>
+          <input type="text" name="adInfo" id="adInfo" placeholder="Description" required/>
+          <span class="error-message" id="adInfoError"></span>
+          <br /><br />
+         
+          <br />
+          </div>
+          <br />
+
+            <label for="comments">Comments*:</label>
+            <textarea name="comments" id="comments" placeholder="Your comments" rows="5" cols="25" required></textarea>
+            <span class="error-message" id="commentsError"></span>
+            <br><br>
+            <input type="submit">
+            <input type="reset">
+            <br><br>
+        </form>
+        <table id="tableData" style="display: none">
+			<tbody>
+			  <tr>
+				<th>Title</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Id</th>
+				<th>Phone Number</th>
+				<th>Street Address 1</th>
+				<th>Street Address 2</th>
+                <th>City</th>
+				<th>ZipCode</th>
+				<th>How did you Hear</th>
+				<th>Drinks</th>
+				<th>Any additional customisations</th>
+				<th>Comments</th>
+              </tr>
+			</tbody>
+		</table>
+    </main>
+</div>
+
+<script src="validations.js"></script>
+
+</body>
+</html>
