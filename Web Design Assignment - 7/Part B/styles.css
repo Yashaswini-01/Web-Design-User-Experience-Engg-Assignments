@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color:orchid;
+    height: 50%;
+}
+
+#timeLabel {
+    font-size: 2em;
+    margin-bottom: 20px;
+    display: block;
+    padding-top: 5px;
+}
+
+input[type="date"] {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Hover styles */
+#startButton:hover {
+    background-color: green;
+    color: white;
+}
+
+#stopButton:hover {
+    background-color: red;
+    color: white;
+}
+
+#resetButton:hover {
+    background-color: blue;
+    color: white;
+}
+
+
+
+
